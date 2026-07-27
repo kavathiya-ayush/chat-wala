@@ -41,7 +41,7 @@ const MobileQRLogin = () => {
             }
         } catch (err) {
             console.error(err);
-            setError('Failed to sign in. Please try again.');
+            setError('Error: ' + err.message);
         } finally {
             setLoading(false);
         }
