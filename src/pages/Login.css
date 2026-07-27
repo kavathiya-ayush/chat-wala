@@ -1,0 +1,240 @@
+.login-wrapper {
+    min-height: 100vh;
+    background-color: var(--app-bg);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding-top: 100px; /* Space for the card to overlay */
+}
+
+/* The iconic green strip at the top */
+.login-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 222px;
+    background-color: var(--app-bg-strip);
+    z-index: 0;
+}
+
+.login-header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 28px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.login-logo {
+    width: 33px;
+    height: 33px;
+    border-radius: 8px;
+}
+
+/* The main white card */
+.login-card {
+    background-color: white;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 20px;
+    border-radius: 3px;
+    box-shadow: 0 17px 50px 0 rgba(11,20,26,.19), 0 12px 15px 0 rgba(11,20,26,.24);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 160px);
+    margin-bottom: 60px;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 40px;
+}
+
+.login-instructions {
+    flex: 1;
+}
+
+.login-instructions h1 {
+    font-weight: 300;
+    font-size: 28px;
+    color: #41525d;
+    margin-bottom: 40px;
+}
+
+.login-instructions ol {
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+.login-instructions li {
+    font-size: 18px;
+    line-height: 28px;
+    color: #3b4a54;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.login-link a {
+    color: #008069;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.login-action-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 40px;
+}
+
+.login-qr-placeholder {
+    width: 264px;
+    height: 264px;
+    background: white;
+    padding: 8px; /* Give it a little white border around the QR */
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.qr-container-wa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.checkbox-wrap-wa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+
+.checkbox-wrap-wa input {
+    width: 18px;
+    height: 18px;
+    accent-color: #00a884;
+    cursor: pointer;
+}
+
+.checkbox-wrap-wa label {
+    font-size: 15px;
+    color: #3b4a54;
+    cursor: pointer;
+}
+
+.divider-wa {
+    width: 100%;
+    max-width: 264px;
+    text-align: center;
+    border-bottom: 1px solid #e9edef;
+    line-height: 0.1em;
+    margin: 10px 0 30px;
+    color: #8696a0;
+    font-size: 13px;
+}
+
+.divider-wa span {
+    background: #fff;
+    padding: 0 10px;
+}
+
+.google-btn-wa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: white;
+    color: #3b4a54;
+    border: 1px solid #e9edef;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(11,20,26,.08);
+    transition: background 0.15s;
+    width: 100%;
+    max-width: 264px;
+}
+
+.google-btn-wa:hover {
+    background: #f5f6f6;
+}
+
+.spinner-dark {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(11, 20, 26, 0.2);
+    border-top-color: #00a884;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error-text-wa {
+    color: var(--danger);
+    font-size: 14px;
+}
+
+/* Desktop layout (Side by side) */
+@media (min-width: 900px) {
+    .login-content {
+        flex-direction: row;
+        padding: 64px;
+        gap: 60px;
+    }
+    
+    .login-instructions {
+        width: 60%;
+    }
+    
+    .login-action-area {
+        width: 40%;
+        padding: 0;
+    }
+}
+
+/* Dark mode overrides for login screen (WhatsApp keeps it light grey if not logged in, but we can respect dark mode) */
+[data-theme="dark"] .login-card {
+    background-color: #111b21;
+    box-shadow: 0 17px 50px 0 rgba(0,0,0,.19), 0 12px 15px 0 rgba(0,0,0,.24);
+}
+
+[data-theme="dark"] .login-instructions h1 { color: #e9edef; }
+[data-theme="dark"] .login-instructions li { color: #d1d7db; }
+[data-theme="dark"] .checkbox-wrap-wa label { color: #d1d7db; }
+[data-theme="dark"] .divider-wa { border-color: #222d34; }
+[data-theme="dark"] .divider-wa span { background: #111b21; color: #aebac1; }
+[data-theme="dark"] .google-btn-wa {
+    background: #202c33;
+    color: #e9edef;
+    border-color: #222d34;
+}
+[data-theme="dark"] .google-btn-wa:hover { background: #2a3942; }
+[data-theme="dark"] .login-qr-placeholder {
+    border-color: #222d34;
+    color: #aebac1;
+}

@@ -1,0 +1,78 @@
+.dashboard-wrapper {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--app-bg);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dashboard-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 127px;
+    background-color: var(--app-bg-strip);
+    z-index: 0;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--panel-bg);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Toasts */
+.toast-container {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.toast {
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    animation: slideIn 0.3s ease;
+}
+
+.toast.success { background: var(--green); }
+.toast.error { background: var(--danger); }
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Desktop sizing (web.whatsapp.com style) */
+@media (min-width: 1024px) {
+    .app-container {
+        width: calc(100% - 38px);
+        max-width: 1600px;
+        height: calc(100% - 38px);
+        box-shadow: 0 17px 50px 0 rgba(11,20,26,.19), 0 12px 15px 0 rgba(11,20,26,.24);
+        border-radius: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    .app-container {
+        width: 1396px;
+        height: calc(100vh - 38px);
+    }
+}

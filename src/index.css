@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600&display=swap');
+
+/* ===== CSS VARIABLES — LIGHT THEME (WhatsApp Web Exact) ===== */
+:root {
+  --app-bg: #d1d7db;
+  --app-bg-strip: #00a884;
+  --panel-bg: #ffffff;
+  --panel-header-bg: #f0f2f5;
+  --header-icon: #54656f;
+  --header-text: #111b21;
+  
+  --chat-bg: #efeae2;
+  --chat-pattern: rgba(0,0,0,0.04);
+  --chat-footer-bg: #f0f2f5;
+  
+  --sent-bubble: #d9fdd3;
+  --recv-bubble: #ffffff;
+  --text: #111b21;
+  --text-muted: #667781;
+  --time-color: #667781;
+  --tick-read: #53bdeb;
+  
+  --border: #e9edef;
+  --hover: #f5f6f6;
+  --active: #f0f2f5;
+  
+  --search-bg: #f0f2f5;
+  --search-input: #ffffff;
+  --green: #00a884;
+  --green-dark: #008f6f;
+  --danger: #ea0038;
+}
+
+/* ===== DARK THEME (WhatsApp Web Exact) ===== */
+[data-theme="dark"] {
+  --app-bg: #0c1317;
+  --app-bg-strip: #0c1317; /* No green strip in dark mode typically */
+  --panel-bg: #111b21;
+  --panel-header-bg: #202c33;
+  --header-icon: #aebac1;
+  --header-text: #e9edef;
+  
+  --chat-bg: #0b141a;
+  --chat-pattern: rgba(255,255,255,0.02);
+  --chat-footer-bg: #202c33;
+  
+  --sent-bubble: #005c4b;
+  --recv-bubble: #202c33;
+  --text: #e9edef;
+  --text-muted: #8696a0;
+  --time-color: rgba(255,255,255,0.6);
+  --tick-read: #53bdeb;
+  
+  --border: #222d34;
+  --hover: #202c33;
+  --active: #2a3942;
+  
+  --search-bg: #202c33;
+  --search-input: #2a3942;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: var(--app-bg);
+  color: var(--text);
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling for webkit */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(11,20,26,0.2);
+  border-radius: 0;
+}
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.16);
+}
